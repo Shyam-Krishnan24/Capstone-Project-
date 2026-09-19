@@ -18,6 +18,8 @@
 
 1. Shyaam Krishnan R - dev branch
 
+---
+
 ### Supervised ML — Advanced Loan Approval
 
 #### Shyaam
@@ -40,6 +42,8 @@
 3. Web Application Development
 4. Model–Backend Integration
 5. Application Testing
+
+---
 
 ### Unsupervised ML – Music Listener Segmentation
 
@@ -65,3 +69,4 @@
 3. Model Integration
 4. Application Testing
 5. Documentation
+
