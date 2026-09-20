@@ -1,59 +1,5 @@
 # Capstone Project
 
-
-### Supervised ML — Advanced Loan Approval
-
-#### Shyaam
-1. Feature Engineering
-2. ML Model Development
-3. Model Evaluation
-4. Integration & Final Testing
-
-#### Harivarman
-1. Data Collection & Dataset Preparation
-2. EDA & Visualization
-3. Data Cleaning
-4. Data Preprocessing
-6. Documentation
-
-#### Harini
-1. Backend Development
-2. API Development
-3. Web Application Development
-4. Model–Backend Integration
-5. Application Testing
-
----
-
-### Unsupervised ML – Music Listener Segmentation
-
-#### Shyaam
-1. ML Model Development
-2. Model Integration
-3. Documentation
-4. Final Testing
-
-#### Sharmila D – Data
-1. Data Cleaning
-2. Preprocessing
-3. EDA & Visualization
-4. Feature Analysis
-
-#### Sofianisha – ML
-1. K-Means Model Development
-2. Cluster Formation
-3. Cluster Interpretation
-4. Model Evaluation
-
-#### Sai Aishwarya V – Application
-1. Backend Development
-2. Web Application Development
-3. Model Integration
-4. Application Testing
-5. Documentation
-
----
-
 ## Capstone Project Overview
 
 This repository contains two machine learning applications developed as part of
@@ -191,3 +137,57 @@ the project-specific README files:
 - [Supervised Learning README](Supervised_Learning/README.md)
 - [Music Listener Segmentation README](Unsupervised_Learning/Music_Listener_Segmentation/README.md)
 
+
+
+### Supervised ML — Advanced Loan Approval
+
+#### Shyaam
+1. Feature Engineering
+2. ML Model Development
+3. Model Evaluation
+4. Integration & Final Testing
+
+#### Harivarman
+1. Data Collection & Dataset Preparation
+2. EDA & Visualization
+3. Data Cleaning
+4. Data Preprocessing
+6. Documentation
+
+#### Harini
+1. Backend Development
+2. API Development
+3. Web Application Development
+4. Model–Backend Integration
+5. Application Testing
+
+---
+
+### Unsupervised ML – Music Listener Segmentation
+
+#### Shyaam
+1. ML Model Development
+2. Model Integration
+3. Documentation
+4. Final Testing
+
+#### Sharmila D – Data
+1. Data Cleaning
+2. Preprocessing
+3. EDA & Visualization
+4. Feature Analysis
+
+#### Sofianisha – ML
+1. K-Means Model Development
+2. Cluster Formation
+3. Cluster Interpretation
+4. Model Evaluation
+
+#### Sai Aishwarya V – Application
+1. Backend Development
+2. Web Application Development
+3. Model Integration
+4. Application Testing
+5. Documentation
+
+---
