@@ -1,45 +1,53 @@
-Project: Advanced Loan Approval – Supervised ML
+# Advanced Loan Approval – Supervised Machine Learning
 
-Completed so far:
+## Project Description
 
-1. Harivarman completed the data cleaning and prepared the cleaned dataset:
-	data/cleaned_loan_data.csv
+Advanced Loan Approval is a machine learning-based application that predicts whether a loan application will be **Approved** or **Not Approved** based on applicant and loan-related information.
 
-2. Shyaam completed the ML development:
-	- Train/test split (80/20, stratified)
-	- Categorical feature encoding using OneHotEncoder
-	- Numerical feature scaling using StandardScaler
-	- Trained Logistic Regression
-	- Trained Decision Tree
-	- Trained Random Forest
-	- Compared Accuracy, Precision, Recall and F1 Score
-	- Generated confusion matrices
-	- Generated classification report
-	- Logistic Regression was selected as the final model based on the current test results
-	- Saved the complete preprocessing + ML pipeline as:
-	  models/loan_approval_model.pkl
+The system takes applicant details such as income, education, employment status, credit history, loan amount, loan term, and property area as input and generates a loan approval prediction along with its probability.
 
-Current ML results:
-- Logistic Regression: Accuracy 86.18%, Precision 84.00%, Recall 98.82%, F1 90.81%
-- Decision Tree: Accuracy 75.61%, Precision 82.35%, Recall 82.35%, F1 82.35%
-- Random Forest: Accuracy 82.11%, Precision 84.62%, Recall 90.59%, F1 87.50%
+## Solution
 
-Harini's remaining work:
+The project follows a complete machine learning and application pipeline:
 
-1. Build the FastAPI backend.
-2. Load models/loan_approval_model.pkl.
-3. Create an API endpoint for loan prediction.
-4. Accept all required applicant inputs through the API.
-5. Pass the input directly to the saved ML pipeline.
-6. Return the predicted Loan_Status and prediction probability.
-7. Build the web frontend for entering applicant details.
-8. Connect the frontend to the FastAPI backend.
-9. Display the final loan approval result clearly.
-10. Perform API, frontend and end-to-end testing.
+1. The cleaned loan dataset is used for model development.
+2. Categorical features are encoded using `OneHotEncoder`.
+3. Numerical features are scaled using `StandardScaler`.
+4. Three classification models are trained:
+   - Logistic Regression
+   - Decision Tree
+   - Random Forest
+5. The models are evaluated using Accuracy, Precision, Recall, and F1 Score.
+6. Logistic Regression was selected as the final model based on the current test results.
+7. The complete preprocessing and trained model pipeline is saved as a `.pkl` file.
+8. A FastAPI backend loads the saved pipeline and provides a loan prediction API.
+9. A Streamlit web interface allows users to enter applicant details.
+10. The Streamlit frontend communicates with the FastAPI backend and displays the final prediction and approval probability.
 
-Important:
-Do NOT retrain or recreate the ML preprocessing/model.
-Use the existing saved pipeline:
-models/loan_approval_model.pkl
+### Model Performance
 
-Maintain the existing project structure and build the backend/frontend around the completed ML pipeline.
+| Model | Accuracy | Precision | Recall | F1 Score |
+|---|---:|---:|---:|---:|
+| Logistic Regression | 86.18% | 84.00% | 98.82% | 90.81% |
+| Decision Tree | 75.61% | 82.35% | 82.35% | 82.35% |
+| Random Forest | 82.11% | 84.62% | 90.59% | 87.50% |
+
+
+## How to Run
+
+### 1. Install Dependencies
+
+Open a terminal in the `loan-approval-ml` directory and run:
+
+### 2. Start the FastAPI Backend
+python -m uvicorn main:app --reload
+
+The API will be available at: 	http://127.0.0.1:8000
+Swagger API documentation:		http://127.0.0.1:8000/docs
+
+### 3. Start the Streamlit Frontend
+
+Open a new terminal while keeping FastAPI running:
+python -m streamlit run app.py
+
+The application will be available at http://localhost:8501
