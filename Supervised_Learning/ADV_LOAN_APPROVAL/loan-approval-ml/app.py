@@ -61,7 +61,7 @@ if st.button("Predict Loan Approval"):
 
     try:
         response = requests.post(
-            "https://YOUR-FASTAPI-URL/predict",
+            "https://capstone-project-d8n1.onrender.com/predict",
             json=data
         )
 
