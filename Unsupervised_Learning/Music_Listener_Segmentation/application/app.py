@@ -10,7 +10,7 @@ st.set_page_config(
     layout="centered",
 )
 
-API_URL = os.getenv("SEGMENTATION_API_URL", "http://127.0.0.1:8000")
+API_URL = os.getenv("SEGMENTATION_API_URL", "http://127.0.0.1:8002")
 
 st.title("Music Listener Segmentation")
 st.write("Enter listener behavior to identify the closest listener segment.")

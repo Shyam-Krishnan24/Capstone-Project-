@@ -1,54 +1,75 @@
 # Advanced Loan Approval Prediction
 
-## Project Description
+This project predicts whether a loan application will be approved from income,
+credit score, loan amount, and employment years.
 
-Advanced Loan Approval Prediction is a supervised machine learning project that predicts whether a loan application is likely to be approved based on an applicant's financial and employment information.
+## Project Contents
 
-The project implements a complete machine learning workflow, from data analysis and preprocessing to model training, evaluation, API development, and web application deployment.
+- `ADV_LOAN_APPROVAL/analysis/`: exploratory analysis notebook
+- `ADV_LOAN_APPROVAL/data/loans.csv`: loan dataset
+- `ADV_LOAN_APPROVAL/loan-approval-ml/main.py`: FastAPI backend
+- `ADV_LOAN_APPROVAL/loan-approval-ml/app.py`: Streamlit frontend
+- `ADV_LOAN_APPROVAL/loan-approval-ml/models/`: saved model files
 
----
+## Input Ranges
 
-## Dataset
+| Input | Minimum | Maximum |
+|---|---:|---:|
+| Income | 20,206 | 149,981 |
+| Credit score | 300 | 849 |
+| Loan amount | 5,097 | 49,976 |
+| Employment years | 0 | 19 |
 
-The project uses the `loans.csv` dataset containing **1,000 loan application records** and **5 columns**.
+## Setup
 
-### Features
+Open PowerShell in the `loan-approval-ml` directory:
 
-| Feature | Description | Minimum | Maximum |
-|---|---|---:|---:|
-| `income` | Applicant income | 20,206 | 149,981 |
-| `credit_score` | Applicant credit score | 300 | 849 |
-| `loan_amount` | Requested loan amount | 5,097 | 49,976 |
-| `employment_years` | Applicant employment duration | 0 | 19 |
+```powershell
+cd "Supervised_Learning\ADV_LOAN_APPROVAL\loan-approval-ml"
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
 
-### Target Variable
+If the virtual environment already exists, only activate it and continue.
 
-| Target | Description | Values |
-|---|---|---|
-| `loan_status` | Loan approval status | `0` = Not Approved, `1` = Approved |
+## Run the Backend
 
-### Input Value Ranges
+Open Terminal 1 and run:
 
-For prediction, the application accepts values within the ranges observed in the dataset:
+```powershell
+cd "Supervised_Learning\ADV_LOAN_APPROVAL\loan-approval-ml"
+.\.venv\Scripts\Activate.ps1
+python -m uvicorn main:app --reload --port 8001
+```
 
-```text
-Income             : 20,206 – 149,981
-Credit Score       : 300 – 849
-Loan Amount        : 5,097 – 49,976
-Employment Years   : 0 – 19
+The backend runs at `http://127.0.0.1:8001`.
 
-## Models Used
+## Run the Frontend
 
-The following supervised machine learning algorithms are trained and evaluated:
+Keep the backend running. Open Terminal 2 and run:
 
-1. Logistic Regression
-2. Decision Tree
-3. Random Forest
+```powershell
+cd "Supervised_Learning\ADV_LOAN_APPROVAL\loan-approval-ml"
+.\.venv\Scripts\Activate.ps1
+streamlit run app.py --server.port 8501
+```
 
-### Model Performance
+Open `http://localhost:8501` in a browser.
 
-| Model | Accuracy | Precision | Recall | F1 Score |
-|---|---:|---:|---:|---:|
-| Logistic Regression | 99.50% | 99.01% | 100.00% | 99.50% |
-| Decision Tree | 94.50% | 94.95% | 94.00% | 94.47% |
-| Random Forest | 97.00% | 97.00% | 97.00% | 97.00% |
+## Test Values
+
+Enter the following values into the four frontend fields.
+
+| Test | Income | Credit score | Loan amount | Employment years | Expected result |
+|---|---:|---:|---:|---:|---|
+| Strong applicant | 120,000 | 800 | 15,000 | 15 | Approved |
+| Moderate applicant | 50,000 | 700 | 20,000 | 5 | Approved |
+| Weak applicant | 20,206 | 300 | 49,976 | 0 | Not Approved |
+
+Select **Predict Loan Approval** after entering each row. The frontend should
+display the decision and approval probability.
+
+## Stop the Project
+
+Press `Ctrl+C` in both terminals when testing is complete.
