@@ -28,8 +28,10 @@
 ### Unsupervised ML – Music Listener Segmentation
 
 #### Shyaam
-1. Final Integration
-2. Overall Coordination
+1. ML Model Development
+2. Model Integration
+3. Documentation
+4. Final Testing
 
 #### Sharmila D – Data
 1. Data Cleaning
@@ -39,7 +41,6 @@
 
 #### Sofianisha – ML
 1. K-Means Model Development
-
 2. Cluster Formation
 3. Cluster Interpretation
 4. Model Evaluation
