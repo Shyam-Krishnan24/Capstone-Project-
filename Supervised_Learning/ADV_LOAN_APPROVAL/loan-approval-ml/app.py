@@ -61,7 +61,7 @@ if st.button("Predict Loan Approval"):
 
     try:
         response = requests.post(
-            "https://capstone-project-d8n1.onrender.com/predict",
+            "https://advanced-loan-approval-api.onrender.com/predict",
             json=data
         )
 
@@ -81,8 +81,9 @@ if st.button("Predict Loan Approval"):
             )
 
         else:
-            st.error("API Error")
-            st.write(response.text)
+            st.error(f"API Error: {response.status_code}")
+            st.write("URL:", response.url)
+            st.write("Response:", response.text)
 
     except requests.exceptions.ConnectionError:
         st.error("Cannot connect to FastAPI. Make sure the backend is running.")
