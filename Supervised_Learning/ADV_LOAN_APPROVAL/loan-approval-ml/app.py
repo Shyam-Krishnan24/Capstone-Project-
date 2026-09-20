@@ -61,7 +61,7 @@ if st.button("Predict Loan Approval"):
 
     try:
         response = requests.post(
-            "http://127.0.0.1:8000/predict",
+            "https://YOUR-FASTAPI-URL/predict",
             json=data
         )
 
